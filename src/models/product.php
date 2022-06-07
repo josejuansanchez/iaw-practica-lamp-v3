@@ -1,6 +1,7 @@
 <?php
+include_once("db/database.php");
 
-class Product{
+class Product {
 	private $id;
 	private $name;
 	private $qty;
@@ -59,24 +60,25 @@ class Product{
 	}
 		
 	public function get() {
-		$producto = $this->db->query("SELECT * FROM product WHERE id = {$this->getId()}");
-		return $producto->fetch_object();
+		$product = $this->db->query("SELECT * FROM product WHERE id = {$this->getId()}");
+		#return $producto->fetch_object();
+		return $product->fetch_assoc();
 	}
 	
-	public function save() {
+	public function insert() {
 		$sql = "INSERT INTO product VALUES(NULL, '{$this->getName()}', {$this->getQty()}, {$this->getPrice()}, {$this->getIdLogin()})";
 		$results = $this->db->query($sql);
 		return $results?true:false;
 	}
 	
-	public function edit() {
-		$sql = "UPDATE product SET name='{$this->getName()}', qty={$this->getQty()}, price={$this->getPrice()}, id_login={$this->getIdLogin()} WHERE id={$this->id}";
-        $results = $this->db->query($sql);
+	public function update() {
+		$sql = "UPDATE product SET name='{$this->getName()}', qty={$this->getQty()}, price={$this->getPrice()} WHERE id={$this->id}";
+		$results = $this->db->query($sql);
 		return $results?true:false;
 	}
 	
 	public function delete(){
-		$sql = "DELETE FROM product WHERE id={$this->id}";
+		$sql = "DELETE FROM product WHERE id={$this->getId()}";
 		$results = $this->db->query($sql);
 		return $results?true:false;		
 	}	

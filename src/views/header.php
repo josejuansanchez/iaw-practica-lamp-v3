@@ -12,7 +12,7 @@
 	<div class="col-lg-8 mx-auto py-md-5">
 		<header class="d-flex align-items-center pb-3 mb-5 border-bottom">
 			<a href="/" class="text-dark text-decoration-none">
-				<img src="../assets/images/code-solid.svg" width="40" height="32" class="me-2">
+				<img src="<?php echo URL_BASE ?>/assets/images/code-solid.svg" width="40" height="32" class="me-2">
 				<span class="fs-4">Company name</span>
 			</a>
 		</header>
