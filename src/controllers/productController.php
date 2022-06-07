@@ -23,9 +23,9 @@ class ProductController {
 
     public function update() {
         // TODO
-	    $name = $_POST['name'];
-	    $qty = $_POST['qty'];
-	    $price = $_POST['price'];
+        $name = $_POST['name'];
+        $qty = $_POST['qty'];
+        $price = $_POST['price'];
         $id = $_POST['id'];
         
         $product = new Product();
@@ -56,9 +56,9 @@ class ProductController {
 
     public function insert() {
         // TODO
-	    $name = $_POST['name'];
-	    $qty = $_POST['qty'];
-	    $price = $_POST['price'];
+        $name = $_POST['name'];
+        $qty = $_POST['qty'];
+        $price = $_POST['price'];
         $id = $_POST['id'];
 
         // $id_login
