@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymLinks
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)/([0-9]+)[/]?$ index.php?controller=$1&action=$2&id=$3 [L]
+    RewriteRule ^([a-zA-Z]+)/([a-zA-Z]+)[/]?$ index.php?controller=$1&action=$2 [L]
+    RewriteRule ^([a-zA-Z]+)[/]?$ index.php?controller=$1 [L]
+</IfModule>
+
+# Flag: [L]
+# Stop the rewriting process immediately and don't apply any more rules. 
+
+# Referencia:
+# - https://httpd.apache.org/docs/current/mod/mod_rewrite.html
